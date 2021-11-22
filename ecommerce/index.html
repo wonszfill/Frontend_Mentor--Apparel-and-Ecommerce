@@ -6,6 +6,9 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet"> 
   <title>Frontend Mentor | E-commerce product page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -17,7 +20,7 @@
 <body>
   
   <header> 
-    <img src="images/logo.svg" alt="sneakers - logo">
+    <img class="click" class="logo" src="images/logo.svg" alt="sneakers - logo">
     <nav>
       <ul>
         <li>Collections</li>
@@ -26,29 +29,38 @@
         <li>About</li>
         <li>Contact</li>
       </ul>
-      <img src="images/icon-cart.svg">
-      <div id="cart">
-        <div>
-          <h3>Cart</h3>
-        </div>
-        <div class="cart-content">
-          
-        </div>
-      </div>
-      <img src="images/image-avatar.png">
     </nav>
+    
+    <img class="click cart-icon" src="images/icon-cart.svg">
+    <img class="click profile" src="images/image-avatar.png">
+    
+    <div id="cart">
+      <div>
+        <h3>Cart</h3>
+      </div>
+      <div class="cart-content">
+        
+      </div>
+      </div>
+    
   </header>
   
   <main>
     <div class="gallery">
       <div >
-        <img src="">
+        <img class="gallery-main" src="images/image-product-1.jpg">
       </div>
       <div>
-        <img src="">
-        <img src="">
-        <img src="">
-        <img src="">
+        <img class="gallery-thumbnail" src="images/image-product-1-thumbnail.jpg">
+        <img class="gallery-thumbnail" src="images/image-product-2-thumbnail.jpg">
+        <img class="gallery-thumbnail" src="images/image-product-3-thumbnail.jpg">
+        <img class="gallery-thumbnail" src="images/image-product-4-thumbnail.jpg">
+
+        <img src="" alt="" class="gallery-thumbnail">
+        <img src="" alt="" class="gallery-thumbnail">
+        <img src="" alt="" class="gallery-thumbnail">
+        <img src="" alt="" class="gallery-thumbnail">
+
       </div>
     </div>
     

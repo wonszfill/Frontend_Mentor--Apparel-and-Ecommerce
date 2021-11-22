@@ -1,25 +1,47 @@
+html{
+    font-family: 'Kumbh Sans', sans-serif;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+}
+
 header{
-   
-
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 0 35px;  
+    border-bottom: 1px solid #999;
 }
 
-img{
-
+header nav{
+    flex-grow: 1;
+    
 }
 
-nav{
-
+header nav ul{
+    display: flex;
+    list-style: none;
 }
 
-ul{
-
+header ul li{
+    padding: 50px 20px;
 }
 
-ul li{
 
+nav ul li:hover{
+    border-bottom: solid 2px orange;
+    cursor: pointer;
+    
+    
 }
+
+
+
 
 main{
+    
 
 }
 
@@ -31,3 +53,37 @@ main{
 .container{
 
 }
+
+.logo{
+    height: 20px;
+}
+
+.cart-icon{
+    position: relative;
+    height:17px;
+    padding: 15px;
+    margin-right: 15px;
+    
+}
+
+header #cart{
+    display: none;
+}
+
+.cart-icon:hover + #cart{
+    position: absolute;
+    top:0;
+    display: block;
+}
+
+.profile{
+    height: 40px;
+    
+}
+
+.profile :hover{
+    border-radius: 100%;
+    outline: solid black 3px; 
+    cursor: pointer;
+}
+
