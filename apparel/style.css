@@ -58,6 +58,7 @@ p{
 }
 
 .form {
+    position: relative;
     display: flex;
     margin: 10px 0;
     border-radius: 100px;
@@ -72,28 +73,54 @@ p{
     flex-grow: 1;
     padding: 25px 35px;
     border: 0;
-    opacity: 0.3;
+    opacity: 0.7;
     border-radius: 100px;
     background: transparent;
     font-size: 1.1rem;
     font-family: inherit;
 }
 
-.form input:focus {
-    border: 0;
+.form input:focus, .form button:active input {
+    outline: 0;
+    border: solid 3px rgb(241, 36, 36);
 }
 
-.form input:invalid:after {
-    content: url(/images/icon-error.svg);
+.alert {
+    display: none;
+    right: 140px;
+    top: 30%;
+
 }
+
+.form input:invalid + .alert {
+    display: block;
+    position: absolute;
+}
+
+.alert-text{
+    display: none;
+}
+
+.form input:invalid ~ .alert-text {
+    display: block;
+    position: absolute;
+    left: 50px;
+    top: 100%;
+    color: hsl(0, 93%, 68%);
+}
+
 
 .form button{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    
     width: 120px;
     border: 0;
     border-radius: 100px;
     color: #ddd;
     margin-left: -50px;
-    z-index: 1;
+
     background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
     -webkit-box-shadow: 0px 12px 55px -15px rgba(66, 68, 90, 1);
     -moz-box-shadow: 0px 12px 55px -15px rgba(66, 68, 90, 1);
@@ -101,6 +128,10 @@ p{
 }
 
 
+.form button:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
 
 aside > img{
     height:100vh;
