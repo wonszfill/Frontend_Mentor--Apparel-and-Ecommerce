@@ -1,10 +1,13 @@
 html{
     font-family: 'Kumbh Sans', sans-serif;
     padding: 0;
+    
 }
 
 body{
     margin: 0;
+    max-width: 2000px;
+    
 }
 
 header{
@@ -12,7 +15,7 @@ header{
     display: flex;
     align-items: center;
     padding: 0 35px;  
-    border-bottom: 1px solid #999;
+    
 }
 
 header nav{
@@ -41,21 +44,53 @@ nav ul li:hover{
 
 
 main{
-    
+display: flex;
+
 
 }
 
 .gallery{
+    display: block;
+    padding: 0px 50px;
+    max-height: 400px ;
+    text-align: center;
+}
+
+.gallery-main{
+width: 500px;
+border-radius: 5%;
 
 }
 
+.gallery-thumbnail{
+ width: 100px ;
+ margin-top: 20px;
+ margin: 15px;   
+ border-radius: 15%;
+    
+}
+.gallery-thumbnail1{
+    width: 100px ;
+    border: 3px solid orange;
+    opacity: 0.4;
+}
 
+.gallery-thumbnail2:hover{
+opacity: 0.4;
+}
 .container{
+padding: 50px;
+margin-left: 300px;
 
 }
 
 .logo{
     height: 20px;
+    
+}
+
+.logo:hover{
+    cursor: pointer;
 }
 
 .cart-icon{
@@ -77,13 +112,22 @@ header #cart{
 }
 
 .profile{
-    height: 40px;
-    
+height:40px;
 }
 
-.profile :hover{
+.click:hover{
     border-radius: 100%;
     outline: solid black 3px; 
     cursor: pointer;
 }
 
+
+h2{
+    color:orange;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+h1{
+    font-size: 45px;
+}
