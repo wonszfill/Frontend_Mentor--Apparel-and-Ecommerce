@@ -6,23 +6,105 @@ html{
 }
 
 body{
+    width: 100%;
     margin: 0;
     min-height: 100%;
     display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
     align-items: center;
 }
 
-header{ 
-    margin-top: 40px;
-    margin-bottom: 200px;
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* HEADER - mobile and desktop versions */
+.mobile-header{
+    background: white;
+    position: relative;
+    order: 1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mobile-header img {
+    height: 30px;
+}
+
+.mobile-menu{
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    color: hsl(0, 36%, 70%);
+    /* slide down animation properties */
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: transform 1s ease-in-out, opacity 1s;
+}
+
+.mobile-menu-visible.mobile-menu{
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.mobile-menu ul{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul li a{
+    display: block;
+    border-top: 1px solid hsl(0, 6%, 24%, 0.2);
+    padding: 15px;
+    background: white;
+}
+
+/* cool animated burger menu icon */
+.burger-container {
+    cursor: pointer;
+}
+  
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-8px, 7px) ;
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-9px, -8px) ;
+}
+
+.desktop-header{
+    display: none;
+    margin: 150px 0 80px 0;
     justify-content: flex-start;
     
 }
 
-header > h1{
-    font-size: 3em;
-}
-
+/* MAIN site content */
 main{
     flex-grow: 1;
     display: flex;
@@ -32,20 +114,21 @@ main{
 }
 
 .container{
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     height: 100vh;
     max-width: 500px;
 }
 
-h1{
+.title{
+    text-align: center;
     letter-spacing: 15px;
-    font-size: 75px;
-    margin-bottom:2px;
+    font-size: 3rem;
     color:hsl(0, 6%, 24%);
 }
 
-h1 > span{
+.title > span{
     font-weight: 300;
     color:hsl(0, 36%, 70%);
 }
@@ -89,7 +172,6 @@ p{
     display: none;
     right: 140px;
     top: 30%;
-
 }
 
 .form input:invalid + .alert {
@@ -133,8 +215,13 @@ p{
     opacity: 0.5;
 }
 
-aside > img{
-    height:100vh;
+.hero {
+    height: 200px;
+    overflow: hidden;
+}
+
+.hero > img{
+    width: 100%;
 }
 
 .attribution {
@@ -144,4 +231,28 @@ aside > img{
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 800px) {
+    .desktop-header{
+        display: flex;
+    }
+    .mobile-header{
+        display: none;
+    }
+    html{
+        font-size: 16px;
+    }
+    body{
+        flex-direction: row;
+    }
+    .title{
+        text-align: left;
+    }
+    .hero {
+        height: auto;
+    }
+    .hero > img{
+        height:100vh;
+    }
 }
