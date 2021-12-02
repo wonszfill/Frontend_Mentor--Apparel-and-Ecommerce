@@ -3,6 +3,7 @@ html{
     height: 100%;
     font-size: 16px;
     font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
 }
 
 body{
@@ -30,11 +31,12 @@ a {
     box-sizing: border-box;
     padding: 50px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
 .mobile-header img {
-    height: 30px;
+    height: 28px;
 }
 
 .mobile-menu{
@@ -50,7 +52,7 @@ a {
     transform-origin: top;
     transform: scaleY(0);
     opacity: 0;
-    transition: transform 1s ease-in-out, opacity 1s;
+    transition: transform 0.8s ease-in-out, opacity 0.8s;
 }
 
 .mobile-menu-visible.mobile-menu{
@@ -72,16 +74,21 @@ a {
     background: white;
 }
 
+.mobile-menu ul li a:hover{
+    background: hsl(0, 74%, 74%, 0.8);
+    color: white;
+}
+
 /* cool animated burger menu icon */
 .burger-container {
     cursor: pointer;
 }
   
 .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
+    width: 30px;
+    height: 4px;
     background-color: #333;
-    margin: 6px 0;
+    margin: 7px 0;
     transition: 0.4s;
 }
 
@@ -118,13 +125,17 @@ main{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    max-width: 500px;
+    
+    padding: 28px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .title{
     text-align: center;
+    text-transform: uppercase;
     letter-spacing: 15px;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color:hsl(0, 6%, 24%);
 }
 
@@ -133,10 +144,10 @@ main{
     color:hsl(0, 36%, 70%);
 }
 
-p{
+.site-description{
    color: hsl(0, 36%, 70%);
    font-size: 1rem;
-   opacity: 0.6;
+   opacity: 0.9;
    line-height: 2;
 }
 
@@ -148,18 +159,18 @@ p{
     border: 1px solid hsl(0, 6%, 24%, 0.2);
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
+    font-size: 1rem;
     color: hsl(0, 6%, 24%);
 }
 
 .form input{
     flex-grow: 1;
-    padding: 25px 35px;
+    padding: 1rem 1.5rem;
     border: 0;
     opacity: 0.7;
     border-radius: 100px;
     background: transparent;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     font-family: inherit;
 }
 
@@ -170,11 +181,11 @@ p{
 
 .alert {
     display: none;
-    right: 140px;
-    top: 30%;
+    right: 80px;
+    top: calc(50% - 12px);
 }
 
-.form input:invalid + .alert {
+.form input:invalid ~ .alert {
     display: block;
     position: absolute;
 }
@@ -196,8 +207,7 @@ p{
     position: absolute;
     right: 0;
     height: 100%;
-    
-    width: 120px;
+    width: 70px;
     border: 0;
     border-radius: 100px;
     color: #ddd;
@@ -233,7 +243,7 @@ p{
     color: hsl(228, 45%, 44%);
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1200px) {
     .desktop-header{
         display: flex;
     }
@@ -246,8 +256,23 @@ p{
     body{
         flex-direction: row;
     }
+    .container{
+        text-align: left;
+        max-width: 500px;
+    }
     .title{
         text-align: left;
+        font-size: 4rem;
+    }
+    .form input{
+        font-size: 1.1rem;
+        padding: 2rem 2rem;
+    }
+    .form button{
+        width: 120px;
+    }
+    .alert{
+        right: 140px;
     }
     .hero {
         height: auto;
